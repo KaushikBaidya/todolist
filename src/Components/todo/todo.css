@@ -1,0 +1,10 @@
+.todo {
+  display: flex;
+  margin-bottom: 10px;
+}
+.check {
+  margin-right: 10px;
+}
+label {
+  font-size: 25px;
+}

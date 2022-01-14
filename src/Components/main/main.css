@@ -14,7 +14,7 @@
   width: 100%;
   min-height: 20vh;
 }
-input {
+.input {
   width: 100%;
   height: 40px;
   background-color: white;
@@ -30,10 +30,17 @@ button {
   padding: 10px;
   cursor: pointer;
   border: none;
+  border-radius: 5px;
 }
 .green {
-  background-color: rgb(13, 97, 13);
+  background-color: rgb(2, 73, 2);
+}
+.green:hover {
+  background-color: rgb(9, 141, 9);
 }
 .red {
-  background-color: rgb(204, 16, 16);
+  background-color: rgb(114, 9, 9);
+}
+.red:hover {
+  background-color: rgb(250, 0, 0);
 }
