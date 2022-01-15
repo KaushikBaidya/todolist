@@ -33,7 +33,7 @@ export default function Main() {
         <TodoList todos={todo} />
       </div>
       <div className="action">
-        <input ref={todoNameRef} className="input" type="text" />
+        <input ref={todoNameRef} className="input" type="text" required />
         <div className="btn">
           <button className="green" onClick={addTodo}>
             Add Todo
