@@ -42,5 +42,9 @@ button {
   background-color: #720909;
 }
 .red:hover {
-  background-color: #fa0000;
+  background-color: #d80202;
+}
+.complete {
+  margin: 10px 0;
+  font-size: x-large;
 }

@@ -17,6 +17,13 @@ export default function Main() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todo))
   }, [todo])
 
+  const toggleTodo = (id) => {
+    const newTodos = [...todo]
+    const todoz = newTodos.find((todoz) => todoz.id === id)
+    todoz.complete = !todoz.complete
+    setTodo(newTodos)
+  }
+
   const addTodo = (e) => {
     const name = todoNameRef.current.value
     if (name === '') return
@@ -26,11 +33,16 @@ export default function Main() {
     todoNameRef.current.value = null
   }
 
+  const clearTodo = () => {
+    const newTodos = todo.filter((todo) => !todo.complete)
+    setTodo(newTodos)
+  }
+
   return (
     <div className="m">
       <div className="logo">Todo List</div>
       <div className="t-list">
-        <TodoList todos={todo} />
+        <TodoList todos={todo} toggleTodo={toggleTodo} />
       </div>
       <div className="action">
         <input ref={todoNameRef} className="input" type="text" required />
@@ -38,7 +50,12 @@ export default function Main() {
           <button className="green" onClick={addTodo}>
             Add Todo
           </button>
-          <button className="red">Clear Complete</button>
+          <button className="red" onClick={clearTodo}>
+            Clear Complete
+          </button>
+        </div>
+        <div className="complete">
+          <p>{todo.filter((todo) => !todo.complete).length} tasks left to do</p>
         </div>
       </div>
     </div>
